@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Links to sources, etc... -->
+	<meta charset="ISO-8859-1">
+	<!-- My Stuff -->
+	<link rel="shortcut icon" href="/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<!-- There is one more script at the very end of Body! -->
+	
+	<!-- Bootstrap from MaxCDN. -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	
+
+	<!-- Actual head business. -->
+	<title>Tile Game Entry</title>
+	
+	<!-- Bootstrap stuff. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body>
+<div class="container"> <!-- Bootstrap container. Maybe alternatively use .container-fluid? -->
+
+<div class="row" id="row1">  <!-- First Row for Bootstrap. -->
+	<div class="col-lg-10">	<!-- First "column" for Bootstrap. -->
+		<h1>Tile Game 27</h1>
+		<p><a href="technology.html">How does this all work?</a></p>
+	</div>
+	<div class="col-lg-2">	<!-- Second "column" for Bootstrap. -->
+		<button class="btn btn-default" onclick="Highscore()">Highscore</button>
+	</div>
+</div>
+
+<div class="row scorecontainer" id="row1b">  <!-- Alternative first Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+		<h1>Highscores</h1>
+		<div class="highscores" id="highscores">There are no highscores to show.</div>
+	</div>
+</div>
+
+
+<div class="row" id="row2">  <!-- Second Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+		<p><span>Input a name for the score board, then press the button to start a new game.</span></p>
+		<span class="form-group">
+			<label for="nickname">Nickname:</label>
+			<input type="text" class="form-control" id="nickname">
+		</span>
+		<button class="btn btn-default" onclick="NewGame()">Start Game</button>
+	</div>
+</div>
+
+<div class="row" id="row3">  <!-- Third Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+	
+		<div class="progress" id="timebarouter">
+			<div class="progress-bar progress-bar-info  timebar" role="progressbar" id="timebar"
+				aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+					<span id="timemessage">Game turn information will appear here.</span>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="row" id="row4">  <!-- Fourth Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+	
+		<span class="score" id="scoremessage">Your score will appear here.</span>
+		
+	</div>
+</div>
+
+<div class="row" id="row5">  <!-- Fifth Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- Second "column" for Bootstrap. -->
+		<div class="resourcebox" id="resourceroot" style="background-color:red">Resources gathered will appear here.</div>
+	</div>
+</div>
+
+<div class="row" id="row6">  <!-- Sixth Row for Bootstrap. -->
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+		<div id="tileroot"></div>
+	</div>
+</div>
+
+<div class="row" id="row7">  <!-- Seventh Row for Bootstrap. --> 
+	<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+		<div class="infobar" id="statusline">Messages about connection to the server appear here.</div>
+	</div>
+</div>
+
+<div class="row" id="row8">  <!-- Eighth Row for Bootstrap. --> 
+	<div class="col-sm-12">	<!-- First "column" for Bootstrap. -->
+		<div class="infobar" id="responseline">Messages about data being parsed clientside appear here.</div>
+	</div>
+</div>
+
+<div class="row" id="row9">  <!-- Nineth Row for Bootstrap. --> 
+	<div class="col-sm-12">	<!-- First "column" for Bootstrap. -->
+		<div class="infobar" id="messageline">Messages to you from serverside appear here.</div>
+	</div>
+</div>
+ 
+</div>
+
+<!-- This script needs to be the last element, since we use it to manipulate loaded elements. It can not be placed inside head. -->
+<script type="text/javascript" src="base.js"></script>
+</body>
+</html>

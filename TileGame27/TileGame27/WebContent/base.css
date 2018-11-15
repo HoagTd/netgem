@@ -1,0 +1,169 @@
+@charset "ISO-8859-1";
+
+:root {
+--tile-bg-color-default: #777777;
+--tile-bg-color-default-high: #aaaa22;
+--tile-bg-color-explore: #73a4f4;
+--tile-bg-color-explore-high: #95c6f6;
+--tile-bg-color-claim: #f473a4;
+--tile-bg-color-claim-high: #f695c6;
+--tile-bg-color-claimed: #a4f473;
+--tile-bg-color-claimed-high: #c6f695;
+--tile-bg-color: var(--tile-bg-color-default);
+--tile-size: 100px;
+--tile-upper-height: 90px;
+--debug-color: #0a00aa;
+--tile-hex-inset: 20%;
+
+}
+
+body {
+	background-color:navy;
+	color: white;
+}
+
+div {
+	background-color:lightblue;
+	color: black;
+	margin: 5px;
+}
+
+.infobar{
+	margin: 3px;
+	padding: 3px;
+	border: 2px double black;
+	background-color: black;
+	color: white;
+}
+
+.scorecontainer, .scorecontainer div{
+	background-color: red;
+	color: black;
+}
+
+.highscores{
+	background-color: DarkRed;
+	color: white;
+}
+
+.score{
+	margin: 3px;
+	padding: 3px;
+	border: 1px solid black;
+	background-color: #663399;
+	color: white;
+	line-height: 1.0;
+}
+
+.resourcebox{
+	margin: 3px;
+	padding: 3px;
+	border: 2px double black;
+	background-color: red;
+	color: black;
+}
+
+.resource{
+	margin: 3px;
+	padding: 3px;
+	border: 1px solid black;
+	background-color: dimgrey;
+	color: white;
+	line-height: 1.0;
+}
+
+.resourceadd{
+	margin: 3px;
+	padding: 3px;
+	border: 1px solid black;
+	background-color: black;
+	color: green;
+	line-height: 1.0;
+}
+
+.resourcepay{
+	margin: 3px;
+	padding: 3px;
+	border: 1px solid black;
+	background-color: black;
+	color: red;
+	line-height: 1.0;
+}
+
+.tileline{
+	line-height: 1.0;
+}
+
+.tile{
+	float: left;
+	width: calc(1.7320508 * var(--tile-size));
+	height: calc(2 * var(--tile-size));
+	position: relative;
+	margin: 25px;
+	
+	/*Points of hexagon: top left, top right, mid right, bottom right, bottom left, middle left.*/
+	/*
+	clip-path: polygon(
+		calc(var(--tile-hex-inset)) 0%,
+		calc(100% - var(--tile-hex-inset)) 0%,
+		100% var(--tile-upper-height),
+		calc(100% - var(--tile-hex-inset)) 100%,
+		calc(var(--tile-hex-inset)) 100%,
+		0px var(--tile-upper-height));
+	*/
+}
+
+.tile.clickable:hover div{
+	background-color: var(--tile-bg-color-default-high);
+}
+
+.tile div{
+	background-color: var(--tile-bg-color);
+	text-align: center;
+	
+}
+
+.tile .upper, .tile .lower{
+	position: absolute;
+	height: 50%;
+	width: 100%;
+	left: 0%;
+}
+
+.tile .upper{
+	top: 0%;
+}
+
+.tile .lower{
+	bottom: 0%;
+}
+
+.tile h4, p {
+	line-height: 0.8;
+}
+
+.tile h4 {
+	
+}
+
+.tile p {
+	
+}
+
+.resourcebox{
+	margin-left: 0px;
+	margin-right: 0px;
+	border: 1px solid black;
+}
+
+.explorebox{
+	--tile-bg-color: var(--tile-bg-color-explore-high);
+}
+
+.claimbox{
+	--tile-bg-color: var(--tile-bg-color-claim-high);
+}
+
+.producebox{
+	--tile-bg-color: var(--tile-bg-color-claimed-high);
+}

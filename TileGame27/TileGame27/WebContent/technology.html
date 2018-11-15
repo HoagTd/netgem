@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This is just a boring static site. -->
+
+	<!-- Links to sources, etc... -->
+	<meta charset="ISO-8859-1">
+	<!-- My Stuff -->
+	<link rel="shortcut icon" href="/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="technology.css">
+	
+	<!-- Bootstrap from MaxCDN. -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	
+
+	<!-- Actual head business. -->
+	<title>Tile Game Tech</title>
+	
+	<!-- Bootstrap stuff. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body>
+<div class="container"> <!-- Bootstrap container. Maybe alternatively use .container-fluid? -->
+
+	<div class="row" id="row1">  <!-- First Row for Bootstrap. -->
+		<div class="col-lg-10">	<!-- First "column" for Bootstrap. -->
+			<h1>Tile Game 27</h1>
+			<p><a href="entry.html">Play the game.</a></p>
+		</div>
+	</div>
+	
+	<div class="row" id="row1b">  <!-- Alternative first Row for Bootstrap. -->
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+			<h2>Summary</h2>
+			<p>The game consists of two pieces: a bundle of HTML, CSS and Javascript on your browser
+			(the client) and a Java servlet running on a virtual machine in Microsoft's Azure cloud
+			(server). When you interact with the webpage the javascript uses your input to generate
+			a http request which it sends to the server. The server then decodes your action, modifies
+			the game state appropriately and responds with an XML file describing the current game state.
+			Finally, the client draws the game state based on the XML instructions received.
+			</p>
+		</div>
+	</div>
+	
+	
+	<div class="row" id="row2">  <!-- Second Row for Bootstrap. -->
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+			<h2>The Classes Involved</h2>
+			<p>Much of the work is handled by existing libraries. Below are the classes I had to create.</p>
+		</div>
+	</div>
+	
+	<div class="row" id="row3">  <!-- Third Row for Bootstrap. -->
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+			<h3>Client Side</h3>
+			<p>Before I started working on this little project I had never written CSS or javascript code, and
+			I had only a passing familiarity with HTML. One of the difficulties I encountered was that each
+			language has its own syntax. To cope with this I tried to strictly separate each language into 
+			its own file.</p>
+			<h4>HTML</h4>
+			<p>Responsibilities: Layout. Provides elements into which javascript inserts objects describing game state.</p>
+			
+			<h4>CSS</h4>
+			<p>Responsibilities: Colors (forgive me), how items look like.</p>
+			
+			<h4>Javascript</h4>
+			<p>Responsibilities: Clientside logic. Communication with servlet (request game state, display game state to user)</p>
+		</div>
+	</div>
+	
+	<div class="row" id="row4">  <!-- Fourth Row for Bootstrap. -->
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. -->
+			<h3>Serverside Side</h3>
+			<p>Before I started working on this little project I had never created a Java servlet. Thankfully
+			the tutorials on the subject were highly informative and easy to follow. The servlet could easily
+			be improved by storing the highscore table in an actual database, or by creating mechanisms for
+			deleting games that sit unattended for a long period of time. Currently this is not necessary since
+			Azure quickly shuts down the servlet while it is not in use.</p>
+			<br>
+			
+			<h4>TileServlet</h4>
+			<p>Responsibilities: Communication with client. Holds highscore data.</p>
+			
+			<h4>Communicator</h4>
+			<p>Responsibilities: Takes Java objects such as TileGame and Highscore and turns them into XML. Stores and appends to XML messages from serverside objects.</p>
+			
+			<h4>Generator</h4>
+			<p>Responsibilities: Generates the game world by creating tiles, linking tiles together and assigns each tile its resources. Holds the game design of the program.</p>
+			
+			<h4>Tile</h4>
+			<p>Responsibilities: Game piece. Contains information about the piece and methods for interacting with it.</p>
+			
+			<h4>TileGame</h4>
+			<p>Responsibilities: Holds information about a game, such as player ID, name, score. Provides methods for the player to play
+			the game with.</p>
+			
+			<h4>Highscore</h4>
+			<p>Responsibilities: Simple data object containing the name and score of a past game.</p>
+			
+		</div>
+	</div>
+	
+<!-- 	
+	<div class="row" id="row5">  <!-- Fifth Row for Bootstrap. --><!-- 
+		<div class="col-lg-12">	<!-- Second "column" for Bootstrap. --><!-- 
+	
+		</div>
+	</div>
+	
+	<div class="row" id="row6">  <!-- Sixth Row for Bootstrap. --><!-- 
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. --><!-- 
+	
+		</div>
+	</div>
+	
+	<div class="row" id="row7">  <!-- Seventh Row for Bootstrap. --><!-- 
+		<div class="col-lg-12">	<!-- First "column" for Bootstrap. --><!-- 
+	
+		</div>
+	</div>
+	
+	<div class="row" id="row8">  <!-- Eighth Row for Bootstrap. --><!-- 
+		<div class="col-sm-12">	<!-- First "column" for Bootstrap. --><!-- 
+	
+		</div>
+	</div>
+	
+	<div class="row" id="row9">  <!-- Nineth Row for Bootstrap. --><!-- 
+		<div class="col-sm-12">	<!-- First "column" for Bootstrap. --><!-- 
+	
+		</div>
+	</div>
+-->
+</div>
+</body>
+</html>
